@@ -1,10 +1,19 @@
+require('dotenv-safe').config();
+
 const express = require('express');
 const app = express();
 
-app.use(express.static(`${__dirname}/`));
+app.use(express.static('public'))
 
-const server = app.listen(8081, () => {
-  const host = server.address().address;
+app.set('view engine', 'pug')
+
+app.get('/', async (_, res) => {
+  const pugdata = {} // await getMaptiles()
+  console.info(new Date())
+  res.render('index', pugdata)
+})
+
+const server = app.listen(process.env.PORT, () => { 
   const port = server.address().port;
-  console.log(`App listening at http://${host}:${port}`);
+  console.log(`App listening at http://localhost:${port}`);
 });

@@ -1,26 +1,25 @@
 {
-  "name": "webperf-network-api",
+  "name": "node-express-pug-cloudinary",
   "version": "1.0.0",
   "description": "",
+  "author": "Clive Da",
+  "license": "MIT",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "html2pug <html/index.html >views/index.pug",
+    "test": "echo \"No tests defined\" && exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cloudinary-developers/webperf-network-api.git"
+    "url": "git+https://github.com/osde8info/node-express-pug-cloudinary"
   },
   "keywords": [
+    "express",
+    "pug",
     "cloudinary"
   ],
-  "author": "Tamas Piros",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cloudinary-developers/webperf-network-api/issues"
-  },
-  "homepage": "https://github.com/cloudinary-developers/webperf-network-api#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
   }
 }

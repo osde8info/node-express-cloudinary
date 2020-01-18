@@ -2,7 +2,6 @@ self.addEventListener('fetch', event => {
   if (/\.jpg$|.png$|.gif$|.webp$/.test(event.request.url)) {
     const connection = navigator.connection.effectiveType;
     let imageQuality;
-    const format = 'f_auto';
     switch (connection) {
       case '4g':
         imageQuality = 'q_auto:good';
@@ -18,10 +17,13 @@ self.addEventListener('fetch', event => {
         'q_auto:best';
         break;
     }
+    const format = 'f_auto';
 
+    console.log(new Date())
     const imageURLParts = event.request.url.split('/');
     imageURLParts.splice(imageURLParts.length - 2, 0, `${imageQuality},${format}`);
     const finalImageURL = new URL(imageURLParts.join('/'));
+    console.log(finalImageURL)
     event.respondWith(
       fetch(finalImageURL.href, { headers: event.request.headers })
     );
