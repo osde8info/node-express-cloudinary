@@ -11,7 +11,7 @@
   "scripts": {
     "build": "html2pug <html/index.html >views/index.pug",
     "test": "echo \"No tests defined\" && exit 0",
-    "start": "npm run build && node ."
+    "start": "npm run-script build && node ."
   },
   "repository": {
     "type": "git",
